@@ -1,0 +1,14 @@
+.modal-img{
+    width: 100%;
+    height: 100%;
+    border: solid gray;
+    border-radius: 50%;
+}
+
+.navbar{
+    color: #ffffff !important;    
+}
+
+.form-control{
+    width: 100%;
+}
