@@ -73,21 +73,19 @@ if(isset($_POST['addtofav'])){
     <div id="searchView" class="row">
       <div class="col col-md-12">
         <h1 class="text-center">Search for ACME GIFs</h1>
-      </div> 
+      </div>
+    </div>
       <div class="row">
-      <div class="col col-md-12">
-      <form method="POST">
-          <div class="row">              
-            <div class="col col-md-10">
-                <input type="text" name="searchGIF" placeholder="Search for GIFs" class="form-control" id="searchGIF">
-            </div>
-            <div class="col col-md-2">
-                <input type="submit" name="submit" class="btn btn-success" value="Get GIF">
-            </div>            
-          </div>
-      </form>
-      </div>
-      </div>
+        <form class="col col-md-12" method="POST">
+        <div class="row formhide">         
+              <div class="col col-md-10 form-group">
+                  <input type="text" name="searchGIF" placeholder="Search for GIFs" class="form-control" id="searchGIF">
+              </div>
+              <div class="col col-md-2">
+                  <input type="submit" name="submit" class="btn btn-success" value="Get GIF">
+              </div>
+              </div>
+        </form>
       <div class="row gallery">
           <?php
               if(!empty($gif)){
@@ -131,6 +129,9 @@ if(isset($_POST['addtofav'])){
     </div>
     <div id="historyView">
       <div class="row">
+      <div class="form-group offset-sm-3 text-center col col-md-6">
+      <h1>History GIFs Search</h1>
+    </div>
         <?php 
           if(isset($_SESSION["username"])){
             $query = "SELECT * FROM history WHERE id_user = '".$_SESSION["userId"]."'";
@@ -139,6 +140,7 @@ if(isset($_POST['addtofav'])){
                 while($row = $result->fetch_assoc()) { 
                   ?>
                   <div class="form-group col col-md-12">
+
                   <h1><?php echo $row["searchkey"]?></h1>
                 </div>
                 <div class="row gallery">
@@ -192,9 +194,9 @@ if(isset($_POST['addtofav'])){
 
     <div id="favoriteView">
     <div class="row">
-    <div class="form-group col col-md-12">
-                  <h1>Favorites GIFs</h1>
-                </div>
+    <div class="form-group offset-sm-3 text-center col col-md-6">
+      <h1>Favorites GIFs</h1>
+    </div>
         <?php 
           if(isset($_SESSION["username"])){
             $query = "SELECT * FROM favorites WHERE id_user = '".$_SESSION["userId"]."'";

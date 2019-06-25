@@ -2,12 +2,14 @@ $(document).ready(function(){
     $('#LoginView').hide();
     $('#historyView').hide();
     $('#favoriteView').hide();
-
+    $('#searchView').show();
+    $('.formhide').show();
     $('#loginbtn').click(function(){
         $('#LoginView').show();
         $('#searchView').hide();
         $('#historyView').hide();
         $('#favoriteView').hide();
+        $('.formhide').hide();
     });
 
     $('#history').click(function(){
@@ -15,19 +17,23 @@ $(document).ready(function(){
         $('#searchView').hide();
         $('#LoginView').hide();
         $('#favoriteView').hide();
+        $('.formhide').hide();
     });
 
-    $('#history').click(function(){
+    $('#favorite').click(function(){
         $('#historyView').hide();
         $('#searchView').hide();
         $('#LoginView').hide();
         $('#favoriteView').show();
+        $('.formhide').hide();
     });
 
     $('.loginlink').click(function(){
         $('#LoginView').hide();
         $('#searchView').show();
         $('#historyView').hide();
+        $('#favoriteView').hide();
+        $('.formhide').show();
     });
 });
 
